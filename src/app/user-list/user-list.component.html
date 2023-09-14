@@ -1,5 +1,5 @@
 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
-<div class="container m-auto mt-5">
+<div class="container m-auto mt-5" [@routeAnimations]>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">  
     <button routerLink="" class="border bg-blue-700 p-2 m-3 text-white rounded-md">Add New User</button>
     <!-- <div class="pb-4">
@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of userListApiResult | paginate:{itemsPerPage:10, currentPage: p}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <tr *ngFor="let user of userListApiResult | paginate:{itemsPerPage:8, currentPage: p}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="w-4 p-4">
                     <div class="flex items-center">
                        <p class="text-center">{{user.id}}</p>

@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import {NgForm, FormGroup, FormControl, Validators} from '@angular/forms'
 import { UserDataInterface } from '../user-data-interface';
 import { UserDataServiceService } from '../service/user-data-service.service';
+import { routeAnimations } from '../animation';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+  styleUrls: ['./user-form.component.css'],
+  animations:[routeAnimations]
 })
 export class UserFormComponent {
 

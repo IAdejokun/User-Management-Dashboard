@@ -6,11 +6,13 @@ import { UserListComponent } from './user-list/user-list.component';
 const routes: Routes = [
   {
     path:'',
-    component:UserFormComponent
+    component:UserFormComponent,
+    data:{animation: 'A'}
   },
   {
     path:'userList',
-    component:UserListComponent
+    component:UserListComponent,
+    data:{animation:'B'}
   }
 ];
 

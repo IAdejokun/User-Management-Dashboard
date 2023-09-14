@@ -3,19 +3,23 @@ import { UserDataServiceService } from '../service/user-data-service.service';
 import { UserDataInterface } from '../user-data-interface';
 import {MatPaginatorModule} from '@angular/material/paginator'
 import { NgxSpinnerService } from 'ngx-spinner';
+import {ToastrService} from 'ngx-toastr'
+import { Router } from '@angular/router';
+import { routeAnimations } from '../animation';
 
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
+  animations:[routeAnimations]
 })
 
 export class UserListComponent implements OnInit{
    
-  constructor( private service: UserDataServiceService, private spinner: NgxSpinnerService ){}
+  constructor( private service: UserDataServiceService, private spinner: NgxSpinnerService, private toast:ToastrService, private route:Router ){}
 
-  p:number = 1
+  p:number = 1;
 
     userListApiResult:any = [];
 
@@ -35,9 +39,14 @@ export class UserListComponent implements OnInit{
     
 
    userListData(){
-    this.service.getUserData().subscribe((result)=>{
-      console.log(result, '#userDataResult');
+    this.service.getUserData().subscribe({
+      next: (result) =>{
+        console.log(result, '#userDataResult');
       this.userListApiResult = result;
+      },
+      error: (err) => {
+        this.toast.error('Try Again', "Couldn't Retrieve Data");
+      }
     })
    } 
 }
