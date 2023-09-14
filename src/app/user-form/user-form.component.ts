@@ -17,9 +17,9 @@ export class UserFormComponent {
   }
 
   newUserFormData = new FormGroup({
-    firstname : new FormControl('', [Validators.required]),
-    lastname : new FormControl('', [Validators.required]),
-    username : new FormControl('',[Validators.required]),
+    firstname : new FormControl('', [Validators.required, Validators.minLength(3)]),
+    lastname : new FormControl('', [Validators.required, Validators.minLength(3)]),
+    username : new FormControl('',[Validators.required, Validators.minLength(3)]),
     email : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
     role: new FormControl('', [Validators.required])
   })

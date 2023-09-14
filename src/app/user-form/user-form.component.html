@@ -17,6 +17,28 @@
           </div>
 
         </div>
+
+        <div *ngIf="newUserFormData.get('username')?.invalid && newUserFormData.get('username')?.touched">
+            <div class="mt-2 text-red-600 text-sm">
+                <!-- Add your validation message here -->
+                Username is required!
+              </div>
+        </div>
+
+        <div *ngIf="newUserFormData.get('username')?.errors?.['minlength']">
+            <div class="mt-2 text-red-600 text-sm">
+                <!-- Add your validation message here -->
+                Username is short (Minimum Length of 3 Characters).
+              </div>
+        </div>
+
+        <div *ngIf="newUserFormData.get('username')?.valid">
+            <div class="mt-2 text-green-600 text-sm">
+                <!-- Add your validation message here -->
+               ✅ Look's Good.
+              </div>
+        </div>
+
       </div>
   
       <div class="border-b border-gray-900/10 pb-12">
@@ -29,12 +51,57 @@
             <div class="mt-2">
               <input type="text" required formControlName="firstname" name="first-name" id="first-name" placeholder="firstname" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
+
+            <div *ngIf="newUserFormData.get('firstname')?.invalid && newUserFormData.get('firstname')?.touched">
+                <div class="mt-2 text-red-600 text-sm">
+                    <!-- Add your validation message here -->
+                    First Name is required!
+                  </div>
+            </div>
+    
+            <div *ngIf="newUserFormData.get('firstname')?.errors?.['minlength']">
+                <div class="mt-2 text-red-600 text-sm">
+                    <!-- Add your validation message here -->
+                    First Name is too short (Minimum Length of 3 Characters).
+                  </div>
+            </div>
+    
+            <div *ngIf="newUserFormData.get('firstname')?.valid">
+                <div class="mt-2 text-green-600 text-sm">
+                    <!-- Add your validation message here -->
+                   ✅ Look's Good.
+                  </div>
+            </div>
+
           </div>
   
+          
+
           <div class="sm:col-span-3">
             <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
             <div class="mt-2">
               <input type="text" required formControlName="lastname" name="last-name" placeholder="lastname" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+
+            <div *ngIf="newUserFormData.get('lastname')?.invalid && newUserFormData.get('lastname')?.touched">
+                <div class="mt-2 text-red-600 text-sm">
+                    <!-- Add your validation message here -->
+                    Last Name is required!
+                  </div>
+            </div>
+    
+            <div *ngIf="newUserFormData.get('lastname')?.errors?.['minlength']">
+                <div class="mt-2 text-red-600 text-sm">
+                    <!-- Add your validation message here -->
+                    Last Name is too short (Minimum Length of 3 Characters).
+                  </div>
+            </div>
+    
+            <div *ngIf="newUserFormData.get('lastname')?.valid">
+                <div class="mt-2 text-green-600 text-sm">
+                    <!-- Add your validation message here -->
+                   ✅ Look's Good.
+                  </div>
             </div>
           </div>
   
@@ -43,6 +110,22 @@
             <div class="mt-2">
               <input id="email" formControlName="email" name="email" type="email" placeholder="janesmith@mail.com" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
             </div>
+
+
+            <div *ngIf="newUserFormData.get('email')?.invalid && newUserFormData.get('email')?.touched">
+                <div class="mt-2 text-red-600 text-sm">
+                    <!-- Add your validation message here -->
+                    Email is Invalid
+                  </div>
+            </div>
+            
+            <div *ngIf="newUserFormData.get('email')?.valid">
+                <div class="mt-2 text-green-600 text-sm">
+                    <!-- Add your validation message here -->
+                   ✅ Look's Good.
+                  </div>
+            </div>
+
           </div>
 
           
@@ -55,6 +138,10 @@
           <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900">Roles Available</legend>
             <p class="mt-1 text-sm leading-6 text-gray-600">These are the roles Available on the System.</p>
+            <div *ngIf="newUserFormData.get('role')?.invalid" class="mt-2 text-red-600 text-sm">
+                <!-- Add your validation message here -->
+                *Selecting a Role is Required
+              </div>
             <div class="mt-6 space-y-6">
               <div class="flex items-center gap-x-3">
                 <input value="admin" required formControlName="role" id="admin" name="role" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -70,6 +157,7 @@
               </div>
             </div>
           </fieldset>
+
         </div>
       </div>
     </div>
