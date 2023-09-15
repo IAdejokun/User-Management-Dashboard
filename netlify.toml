@@ -1,3 +1,3 @@
 [build]
   command = "ng build --prod"
-  publish = "dist/my-angular-app"
+  publish = "dist/user-management-dashboard"
