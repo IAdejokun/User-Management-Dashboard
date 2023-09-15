@@ -5,7 +5,5 @@ export const routeAnimations = trigger('routeAnimations', [
     style({ opacity: 0 }),
     animate('400ms', style({ opacity: 1 })),
   ]),
-  transition(':leave', [
-    animate('400ms', style({ opacity: 0 })),
-  ]),
+  transition(':leave', [animate('400ms', style({ opacity: 0 }))]),
 ]);

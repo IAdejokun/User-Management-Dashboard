@@ -5,19 +5,19 @@ import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:UserListComponent,
-    data:{animation: 'A'}
+    path: '',
+    component: UserListComponent,
+    data: { animation: 'A' },
   },
   {
-    path:'addUser',
-    component:UserFormComponent,
-    data:{animation:'B'}
-  }
+    path: 'addUser',
+    component: UserFormComponent,
+    data: { animation: 'B' },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,23 +1,26 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Component, HostBinding } from '@angular/core';
+import {
+  NgModule,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Component,
+  HostBinding,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule  } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {ToastrModule} from 'ngx-toastr'
+import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations'
-
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserListComponent,
-    UserFormComponent
-  ],
+  declarations: [AppComponent, UserListComponent, UserFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,10 +30,10 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     NgxPaginationModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NgxSpinnerModule.forRoot({type:'square-jelly-box'})
+    NgxSpinnerModule.forRoot({ type: 'square-jelly-box' }),
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
