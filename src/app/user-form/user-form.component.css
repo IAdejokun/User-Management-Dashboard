@@ -1,3 +1,9 @@
 form{
     width: 90%
 }
+
+input[type="text"].focus:ring,
+input[type="text"].focus:ring-inset {
+  border-width: 1px !important;
+  border-color: #a0aec0 !important; /* Adjust the color to your preference */
+}
